@@ -1,0 +1,261 @@
+---
+export const prerender = true;
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About" description="Hengistbury Investment Partners — founded 2011, FCA regulated alternative investment management firm based in Mayfair, London.">
+
+  <div class="page-hero">
+    <div class="container">
+      <p class="eyebrow">The Firm</p>
+      <h1>About Hengistbury<br/>Investment Partners</h1>
+    </div>
+  </div>
+
+  <section class="about-main">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content">
+          <p class="lead">
+            Hengistbury Investment Partners LLP is an independently owned and managed
+            alternative investment management firm, founded in 2011 and based in Mayfair, London.
+          </p>
+
+          <h2>Our Approach</h2>
+          <div class="divider"></div>
+          <p>
+            We apply rigorous fundamental analysis to identify compelling risk-adjusted
+            investment opportunities across a range of alternative strategies. Our investment
+            process is research-driven, disciplined, and focused on capital preservation and
+            superior long-term returns for our investors.
+          </p>
+          <p>
+            We maintain a deliberate focus on capacity discipline — we will not expand our
+            assets under management beyond a level at which we believe we can continue to
+            generate differentiated returns. This discipline ensures our interests remain
+            fully aligned with those of our investors.
+          </p>
+
+          <h2>Regulatory Framework</h2>
+          <div class="divider"></div>
+          <p>
+            The firm is authorised and regulated by the Financial Conduct Authority (FCA) in
+            the United Kingdom. We operate under applicable provisions of the Alternative
+            Investment Fund Managers Directive (AIFMD) and related UK legislation.
+          </p>
+          <p>
+            Our commitment to regulatory compliance extends to our full participation in
+            applicable transparency and reporting obligations, including publication of
+            regulatory disclosures available on our
+            <a href="/disclosures">Disclosures</a> page.
+          </p>
+
+          <h2>Investor Relationships</h2>
+          <div class="divider"></div>
+          <p>
+            We work with a select group of institutional investors and sophisticated private
+            clients. We place great importance on transparency and direct communication with
+            our investors, providing regular written updates on portfolio positioning and
+            market conditions through our quarterly investor letters.
+          </p>
+          <p>
+            Existing investors can access letters and news updates through our secure
+            <a href="/portal/login">Investor Portal</a>.
+          </p>
+        </div>
+
+        <aside class="about-sidebar">
+          <div class="firm-details-card">
+            <h3>Firm Details</h3>
+            <dl class="firm-dl">
+              <div class="firm-dl-row">
+                <dt>Full Name</dt>
+                <dd>Hengistbury Investment Partners LLP</dd>
+              </div>
+              <div class="firm-dl-row">
+                <dt>Founded</dt>
+                <dd>2011</dd>
+              </div>
+              <div class="firm-dl-row">
+                <dt>Partnership No</dt>
+                <dd>OC365747</dd>
+              </div>
+              <div class="firm-dl-row">
+                <dt>Regulated by</dt>
+                <dd>Financial Conduct Authority</dd>
+              </div>
+              <div class="firm-dl-row">
+                <dt>Strategy</dt>
+                <dd>Alternative Investment Management</dd>
+              </div>
+            </dl>
+
+            <h3 class="mt-lg">Contact</h3>
+            <address class="firm-address">
+              First Floor<br />
+              34 Brook Street<br />
+              London W1K 5DN<br />
+              United Kingdom
+            </address>
+            <div class="firm-contact-links">
+              <a href="tel:+442075294646">+44 20 7529 4646</a>
+              <a href="mailto:info@hengistburypartners.com">info@hengistburypartners.com</a>
+            </div>
+          </div>
+
+          <a href="/contact" class="cta-sidebar">
+            <p>Enquire about investing with Hengistbury</p>
+            <span class="cta-arrow">Contact Us &rarr;</span>
+          </a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: var(--navy);
+    padding: 5rem 0 4rem;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .page-hero h1 { color: var(--white); line-height: 1.15; }
+
+  .about-main { padding: var(--section-pad); background: var(--white); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .about-content .lead {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: var(--navy);
+    margin-bottom: 2.5rem;
+  }
+
+  .about-content h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  .about-content p {
+    color: #444;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  .about-content a { color: var(--gold); }
+  .about-content a:hover { text-decoration: underline; }
+
+  /* Sidebar card */
+  .firm-details-card {
+    background: var(--off-white);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--gold);
+    padding: 2rem;
+  }
+
+  .firm-details-card h3 {
+    font-size: 1rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.8rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .mt-lg { margin-top: 2rem; }
+
+  .firm-dl { display: flex; flex-direction: column; gap: 0; }
+
+  .firm-dl-row {
+    display: flex;
+    flex-direction: column;
+    padding: 0.65rem 0;
+    border-bottom: 1px solid var(--border);
+    gap: 0.15rem;
+  }
+
+  .firm-dl-row:last-child { border-bottom: none; }
+
+  dt {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--mid-gray);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  dd {
+    font-size: 0.9rem;
+    color: var(--navy);
+  }
+
+  .firm-address {
+    font-style: normal;
+    font-size: 0.9rem;
+    line-height: 1.75;
+    color: var(--navy);
+    margin-bottom: 1rem;
+  }
+
+  .firm-contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .firm-contact-links a {
+    font-size: 0.875rem;
+    color: var(--gold);
+  }
+
+  .firm-contact-links a:hover { text-decoration: underline; }
+
+  .cta-sidebar {
+    display: block;
+    margin-top: 1.5rem;
+    background: var(--navy);
+    padding: 1.5rem;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .cta-sidebar:hover { background: var(--navy-light); }
+
+  .cta-sidebar p {
+    color: rgba(255,255,255,0.75);
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+  }
+
+  .cta-arrow {
+    color: var(--gold);
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  @media (max-width: 900px) {
+    .about-grid { grid-template-columns: 1fr; }
+    .about-sidebar { order: -1; }
+  }
+</style>

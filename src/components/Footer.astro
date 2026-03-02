@@ -1,0 +1,159 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="footer-inner container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p class="footer-logo">
+          <span class="logo-h">H</span>engistbury Investment Partners
+        </p>
+        <p class="footer-address">
+          First Floor, 34 Brook Street<br />
+          London W1K 5DN<br />
+          United Kingdom
+        </p>
+        <p class="footer-contact">
+          T: +44 20 7529 4646<br />
+          E: <a href="mailto:info@hengistburypartners.com">info@hengistburypartners.com</a>
+        </p>
+        <p class="footer-reg">Partnership No: OC365747</p>
+      </div>
+
+      <div class="footer-nav">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/disclosures">Disclosures</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/portal/login">Investor Login</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-disclosures">
+        <h4>Regulatory Disclosures</h4>
+        <ul>
+          <li><a href="/disclosures/pillar-3">Pillar 3 Disclosure</a></li>
+          <li><a href="/disclosures/remuneration">Remuneration Policy</a></li>
+          <li><a href="/disclosures/stewardship-code">Stewardship Code</a></li>
+          <li><a href="/disclosures/privacy-notice">Privacy Notice</a></li>
+          <li><a href="/disclosures/modern-slavery">Modern Slavery Statement</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="fca-statement">
+        Hengistbury Investment Partners LLP is authorised and regulated by the Financial Conduct Authority.
+        The information on this website is directed only at professional investors and is not intended for
+        retail clients. Past performance is not a reliable indicator of future results. The value of
+        investments may fall as well as rise.
+      </p>
+      <p class="copyright">
+        &copy; {year} Hengistbury Investment Partners LLP. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.7);
+    padding: 4rem 0 0;
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .footer-logo {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+  }
+
+  .logo-h { color: var(--gold); }
+
+  .footer-address,
+  .footer-contact,
+  .footer-reg {
+    font-size: 0.875rem;
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-contact a,
+  .footer-reg {
+    color: rgba(255,255,255,0.55);
+  }
+
+  .footer-contact a:hover { color: var(--gold); }
+
+  .footer-nav h4,
+  .footer-disclosures h4 {
+    color: var(--gold);
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .footer-nav ul,
+  .footer-disclosures ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-nav a,
+  .footer-disclosures a {
+    color: rgba(255,255,255,0.65);
+    font-size: 0.875rem;
+    transition: color 0.2s;
+  }
+
+  .footer-nav a:hover,
+  .footer-disclosures a:hover { color: var(--gold); }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .fca-statement {
+    font-size: 0.8rem;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.4);
+    max-width: 800px;
+  }
+
+  .copyright {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.35);
+  }
+
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+</style>

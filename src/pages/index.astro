@@ -1,0 +1,388 @@
+---
+export const prerender = true;
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Home" description="Hengistbury Investment Partners — Alternative Investment Management. FCA Regulated. Mayfair, London.">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner container">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Hengistbury Investment Partners</p>
+        <h1>Alternative Investment<br/>Management</h1>
+        <p class="hero-sub">
+          An independent investment firm providing institutional-quality alternative
+          strategies to professional investors. Established 2011.
+        </p>
+        <div class="hero-actions">
+          <a href="/about" class="btn btn-primary">Learn About Us</a>
+          <a href="/contact" class="btn btn-outline">Contact</a>
+        </div>
+      </div>
+      <div class="hero-ornament" aria-hidden="true">
+        <div class="ornament-ring"></div>
+        <div class="ornament-ring ornament-ring--2"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Info Strip -->
+  <section class="info-strip">
+    <div class="container">
+      <ul class="strip-list">
+        <li class="strip-item">
+          <span class="strip-icon" aria-hidden="true">&#x25C6;</span>
+          <span class="strip-label">FCA Regulated</span>
+          <span class="strip-sub">Authorised &amp; regulated by the Financial Conduct Authority</span>
+        </li>
+        <li class="strip-item">
+          <span class="strip-icon" aria-hidden="true">&#x25C6;</span>
+          <span class="strip-label">Mayfair, London</span>
+          <span class="strip-sub">34 Brook Street, London W1K 5DN</span>
+        </li>
+        <li class="strip-item">
+          <span class="strip-icon" aria-hidden="true">&#x25C6;</span>
+          <span class="strip-label">Investor Access</span>
+          <span class="strip-sub">Secure portal for current investors</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- About teaser -->
+  <section class="about-teaser">
+    <div class="container">
+      <div class="about-teaser-inner">
+        <div class="about-teaser-text">
+          <p class="section-eyebrow">The Firm</p>
+          <h2>An Independent Approach to Alternative Investment</h2>
+          <div class="divider"></div>
+          <p>
+            Founded in 2011, Hengistbury Investment Partners LLP is an independently owned and
+            managed alternative investment firm. We manage capital on behalf of a select group
+            of institutional and sophisticated private investors, applying rigorous fundamental
+            analysis to identify and capture compelling risk-adjusted opportunities.
+          </p>
+          <p style="margin-top:1rem;">
+            Our focus on capacity discipline and alignment of interest with our investors
+            has underpinned our approach since inception.
+          </p>
+          <a href="/about" class="btn btn-navy" style="margin-top:1.75rem;">About the Firm</a>
+        </div>
+        <div class="about-teaser-card">
+          <div class="firm-card">
+            <h3>Firm Details</h3>
+            <div class="firm-detail-row">
+              <span class="detail-label">Founded</span>
+              <span>2011</span>
+            </div>
+            <div class="firm-detail-row">
+              <span class="detail-label">Domicile</span>
+              <span>England &amp; Wales</span>
+            </div>
+            <div class="firm-detail-row">
+              <span class="detail-label">Regulated by</span>
+              <span>Financial Conduct Authority</span>
+            </div>
+            <div class="firm-detail-row">
+              <span class="detail-label">Partnership No</span>
+              <span>OC365747</span>
+            </div>
+            <div class="firm-detail-row">
+              <span class="detail-label">Strategy</span>
+              <span>Alternative Investments</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Disclosures teaser -->
+  <section class="disclosures-teaser">
+    <div class="container">
+      <p class="section-eyebrow">Regulatory Compliance</p>
+      <h2>Regulatory Disclosures</h2>
+      <div class="divider"></div>
+      <p class="disclosures-intro">
+        In accordance with our obligations as an FCA-regulated firm, we publish the following
+        regulatory disclosures for review by clients and counterparties.
+      </p>
+      <div class="disclosures-grid">
+        <a href="/disclosures/pillar-3" class="disclosure-card">
+          <h4>Pillar 3 Disclosure</h4>
+          <p>Capital adequacy and risk management framework disclosure under CRD IV.</p>
+        </a>
+        <a href="/disclosures/remuneration" class="disclosure-card">
+          <h4>Remuneration Policy</h4>
+          <p>Our approach to remuneration in accordance with AIFMD requirements.</p>
+        </a>
+        <a href="/disclosures/stewardship-code" class="disclosure-card">
+          <h4>Stewardship Code</h4>
+          <p>Our statement of compliance with the FRC UK Stewardship Code.</p>
+        </a>
+        <a href="/disclosures/privacy-notice" class="disclosure-card">
+          <h4>Privacy Notice</h4>
+          <p>How we collect, use and protect personal data under UK GDPR.</p>
+        </a>
+        <a href="/disclosures/modern-slavery" class="disclosure-card">
+          <h4>Modern Slavery Statement</h4>
+          <p>Our commitment under the Modern Slavery Act 2015.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-inner">
+        <h2>Interested in Learning More?</h2>
+        <p>
+          We welcome enquiries from institutional investors and qualified private clients.
+          Please contact us to arrange an introductory conversation.
+        </p>
+        <a href="/contact" class="btn btn-primary">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero {
+    background: var(--navy);
+    color: var(--white);
+    padding: 6rem 0 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.25rem;
+    font-weight: 500;
+  }
+
+  .hero h1 {
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+  }
+
+  .hero-sub {
+    color: rgba(255,255,255,0.7);
+    font-size: 1.1rem;
+    max-width: 500px;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-ornament {
+    width: 240px;
+    height: 240px;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .ornament-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.2);
+  }
+
+  .ornament-ring--2 {
+    inset: 30px;
+    border-color: rgba(201,168,76,0.35);
+  }
+
+  /* Info strip */
+  .info-strip {
+    background: var(--gold);
+    padding: 0;
+  }
+
+  .strip-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+
+  .strip-item {
+    padding: 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    border-right: 1px solid rgba(15,29,47,0.15);
+  }
+
+  .strip-item:last-child { border-right: none; }
+
+  .strip-icon {
+    color: var(--navy);
+    font-size: 0.7rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .strip-label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--navy);
+  }
+
+  .strip-sub {
+    font-size: 0.8rem;
+    color: rgba(15,29,47,0.7);
+  }
+
+  /* About teaser */
+  .about-teaser { background: var(--white); }
+
+  .section-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  .about-teaser-inner {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .about-teaser-text p {
+    color: #444;
+    line-height: 1.75;
+  }
+
+  .firm-card {
+    background: var(--off-white);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    border-top: 3px solid var(--gold);
+  }
+
+  .firm-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--navy);
+  }
+
+  .firm-detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.875rem;
+    gap: 1rem;
+  }
+
+  .firm-detail-row:last-child { border-bottom: none; }
+
+  .detail-label {
+    color: var(--mid-gray);
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+
+  /* Disclosures teaser */
+  .disclosures-teaser { background: var(--off-white); }
+
+  .disclosures-intro {
+    color: #555;
+    max-width: 640px;
+    margin-bottom: 2.5rem;
+    line-height: 1.75;
+  }
+
+  .disclosures-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .disclosure-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    border-top: 2px solid var(--gold);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .disclosure-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    color: inherit;
+  }
+
+  .disclosure-card h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--navy);
+  }
+
+  .disclosure-card p {
+    font-size: 0.85rem;
+    color: var(--mid-gray);
+    line-height: 1.55;
+  }
+
+  /* CTA */
+  .cta-section {
+    background: var(--navy);
+    padding: 5rem 0;
+  }
+
+  .cta-inner {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .cta-inner h2 { color: var(--white); margin-bottom: 1rem; }
+
+  .cta-inner p {
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 2rem;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 900px) {
+    .hero-ornament { display: none; }
+    .about-teaser-inner { grid-template-columns: 1fr; }
+    .disclosures-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    .strip-list { grid-template-columns: 1fr; }
+    .strip-item { border-right: none; border-bottom: 1px solid rgba(15,29,47,0.15); }
+    .strip-item:last-child { border-bottom: none; }
+    .disclosures-grid { grid-template-columns: 1fr; }
+  }
+</style>

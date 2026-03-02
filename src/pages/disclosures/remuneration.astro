@@ -1,0 +1,158 @@
+---
+export const prerender = true;
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Remuneration Policy" description="Remuneration policy disclosure — Hengistbury Investment Partners LLP.">
+
+  <div class="page-hero">
+    <div class="container">
+      <a href="/disclosures" class="back-link">← Disclosures</a>
+      <p class="eyebrow">Regulatory Disclosure</p>
+      <h1>Remuneration Policy Disclosure</h1>
+      <p class="meta">Hengistbury Investment Partners LLP &mdash; Effective 31 December 2023</p>
+    </div>
+  </div>
+
+  <article class="disclosure-body">
+    <div class="container">
+      <div class="doc-grid">
+        <nav class="doc-toc">
+          <p class="toc-label">Contents</p>
+          <ol>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#governance">Governance</a></li>
+            <li><a href="#fixed-variable">Fixed and Variable Remuneration</a></li>
+            <li><a href="#risk-alignment">Risk Alignment</a></li>
+            <li><a href="#disclosure">Quantitative Disclosure</a></li>
+          </ol>
+          <div class="toc-footer">
+            <a href="/disclosures" class="back-link-sm">All disclosures</a>
+          </div>
+        </nav>
+
+        <div class="doc-content">
+          <section id="introduction">
+            <h2>1. Introduction</h2>
+            <p>
+              This disclosure sets out the remuneration policies and practices of Hengistbury
+              Investment Partners LLP (&ldquo;the Firm&rdquo;) for the financial year ended 31 December 2023,
+              in accordance with the requirements of MIFIDPRU 8 and the FCA&rsquo;s Remuneration Code
+              as applicable to MIFIDPRU investment firms.
+            </p>
+            <p>
+              The Firm is classified as a non-SNI (Small and Non-Interconnected) MIFIDPRU firm.
+              As such, the Firm is subject to basic remuneration requirements under MIFIDPRU 7
+              and is not required to apply the full suite of variable remuneration requirements
+              applicable to larger firms.
+            </p>
+          </section>
+
+          <section id="governance">
+            <h2>2. Governance</h2>
+            <p>
+              The Firm&rsquo;s remuneration policy is determined and overseen by the members of the
+              LLP in accordance with applicable regulatory requirements. Given the size and
+              nature of the Firm, a separate remuneration committee has not been established;
+              remuneration decisions are made by the Firm&rsquo;s management with independent
+              oversight applied proportionately to the Firm&rsquo;s scale.
+            </p>
+            <p>
+              The remuneration policy is reviewed at least annually to ensure it remains
+              appropriate and consistent with the Firm&rsquo;s risk profile, strategy and applicable
+              regulatory requirements.
+            </p>
+          </section>
+
+          <section id="fixed-variable">
+            <h2>3. Fixed and Variable Remuneration</h2>
+            <h3>3.1 Fixed Remuneration</h3>
+            <p>
+              Fixed remuneration reflects the relevant experience, skills, seniority and
+              responsibilities of members and employees. It is set at a level that is appropriate
+              to attract and retain qualified staff and is not contingent on performance.
+            </p>
+
+            <h3>3.2 Variable Remuneration</h3>
+            <p>
+              Variable remuneration, where awarded, is discretionary and determined with reference
+              to the Firm&rsquo;s overall financial performance, individual contribution, and risk
+              management outcomes. Variable remuneration is not guaranteed and is not structured
+              in a manner that incentivises excessive risk-taking.
+            </p>
+            <p>
+              The Firm ensures that the ratio of variable to fixed remuneration is set at a level
+              appropriate to allow the Firm to operate a fully flexible bonus policy, including
+              the possibility of paying no variable remuneration where warranted.
+            </p>
+          </section>
+
+          <section id="risk-alignment">
+            <h2>4. Risk Alignment</h2>
+            <p>
+              The Firm&rsquo;s remuneration structure is designed to be consistent with and promote
+              sound and effective risk management. Specifically:
+            </p>
+            <ul>
+              <li>Remuneration is not structured in a way that conflicts with the Firm&rsquo;s obligation to act in the best interests of its clients;</li>
+              <li>Performance assessments take into account qualitative as well as quantitative measures, including adherence to risk management policies and regulatory requirements;</li>
+              <li>The Firm does not reward risk-taking above levels it considers appropriate;</li>
+              <li>Guaranteed variable remuneration is not awarded except in limited circumstances relating to recruitment, and only for the first year of engagement.</li>
+            </ul>
+          </section>
+
+          <section id="disclosure">
+            <h2>5. Quantitative Disclosure</h2>
+            <p>
+              In accordance with applicable proportionality provisions, the Firm discloses
+              aggregate information on remuneration. The Firm does not identify individuals by
+              name given the small size of the firm and the need to protect personal data in
+              accordance with UK GDPR.
+            </p>
+            <p>
+              Quantitative disclosure in respect of the financial year ended 31 December 2023
+              is set out in the Firm&rsquo;s annual report and accounts filed at Companies House.
+            </p>
+          </section>
+
+          <div class="doc-footer">
+            <p>Published: January 2024 &bull; Effective year ended 31 December 2023</p>
+            <p>
+              Hengistbury Investment Partners LLP &bull; Partnership No: OC365747 &bull;
+              Authorised and regulated by the Financial Conduct Authority
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+</BaseLayout>
+
+<style>
+  .page-hero { background: var(--navy); padding: 3rem 0 4rem; }
+  .back-link { display: inline-block; color: rgba(255,255,255,0.5); font-size: 0.85rem; margin-bottom: 1.5rem; transition: color 0.2s; }
+  .back-link:hover { color: var(--gold); }
+  .eyebrow { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 0.75rem; }
+  .page-hero h1 { color: var(--white); margin-bottom: 0.75rem; }
+  .meta { color: rgba(255,255,255,0.5); font-size: 0.875rem; }
+  .disclosure-body { padding: 4rem 0; background: var(--white); }
+  .doc-grid { display: grid; grid-template-columns: 220px 1fr; gap: 4rem; align-items: start; }
+  .doc-toc { position: sticky; top: 90px; }
+  .toc-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; color: var(--mid-gray); margin-bottom: 0.75rem; }
+  .doc-toc ol { list-style: none; border-left: 2px solid var(--border); padding-left: 0; margin-bottom: 2rem; }
+  .doc-toc a { display: block; padding: 0.45rem 0.75rem; font-size: 0.82rem; color: var(--mid-gray); border-left: 2px solid transparent; margin-left: -2px; line-height: 1.4; transition: color 0.15s, border-color 0.15s; }
+  .doc-toc a:hover { color: var(--navy); border-left-color: var(--gold); }
+  .toc-footer { border-top: 1px solid var(--border); padding-top: 1rem; }
+  .back-link-sm { font-size: 0.8rem; color: var(--mid-gray); }
+  .back-link-sm:hover { color: var(--gold); }
+  .doc-content section { margin-bottom: 3rem; }
+  .doc-content h2 { font-size: 1.4rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+  .doc-content h3 { font-size: 1.05rem; font-family: var(--font-body); font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+  .doc-content p { color: #444; line-height: 1.8; margin-bottom: 1rem; }
+  .doc-content ul { color: #444; padding-left: 1.5rem; margin-bottom: 1rem; line-height: 1.8; }
+  .doc-content li { margin-bottom: 0.35rem; }
+  .doc-footer { border-top: 1px solid var(--border); padding-top: 2rem; margin-top: 3rem; }
+  .doc-footer p { font-size: 0.8rem; color: var(--mid-gray); line-height: 1.65; }
+  @media (max-width: 768px) { .doc-grid { grid-template-columns: 1fr; } .doc-toc { position: static; } }
+</style>

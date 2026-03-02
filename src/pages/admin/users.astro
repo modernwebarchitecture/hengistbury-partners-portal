@@ -1,0 +1,9 @@
+---
+export const prerender = false;
+import DashboardLayout from '../../layouts/DashboardLayout.astro';
+import AdminUsers from '../../components/AdminUsers';
+---
+
+<DashboardLayout title="Manage Users" activeSection="admin-users">
+  <AdminUsers client:load />
+</DashboardLayout>

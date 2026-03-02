@@ -1,0 +1,158 @@
+---
+const currentPath = Astro.url.pathname;
+const isActive = (path: string) => currentPath === path || (path !== '/' && currentPath.startsWith(path));
+---
+
+<header class="site-header">
+  <nav class="nav container">
+    <a href="/" class="nav-logo" aria-label="Hengistbury Investment Partners">
+      <span class="logo-h">H</span>engistbury
+    </a>
+
+    <button class="nav-toggle" aria-label="Toggle navigation" id="navToggle">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="nav-links" id="navLinks">
+      <a href="/" class={`nav-link ${isActive('/') && currentPath === '/' ? 'active' : ''}`}>Home</a>
+      <a href="/about" class={`nav-link ${isActive('/about') ? 'active' : ''}`}>About</a>
+      <a href="/disclosures" class={`nav-link ${isActive('/disclosures') ? 'active' : ''}`}>Disclosures</a>
+      <a href="/contact" class={`nav-link ${isActive('/contact') ? 'active' : ''}`}>Contact</a>
+      <a href="/portal/login" class="btn btn-portal">Investor Login</a>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle?.addEventListener('click', () => {
+    links?.classList.toggle('open');
+    toggle.classList.toggle('open');
+  });
+</script>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--navy);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    gap: 2rem;
+  }
+
+  .nav-logo {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: var(--white);
+    text-decoration: none;
+    flex-shrink: 0;
+    letter-spacing: 0.01em;
+  }
+
+  .nav-logo:hover { color: var(--white); }
+
+  .logo-h {
+    color: var(--gold);
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .nav-link {
+    color: rgba(255,255,255,0.75);
+    padding: 0.5rem 0.85rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    transition: color 0.2s;
+    border-radius: 2px;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--gold);
+  }
+
+  .btn-portal {
+    margin-left: 0.75rem;
+    background: var(--gold);
+    color: var(--navy);
+    padding: 0.5rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 2px;
+    letter-spacing: 0.02em;
+    transition: background 0.2s;
+  }
+
+  .btn-portal:hover {
+    background: var(--gold-light);
+    color: var(--navy);
+  }
+
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+
+  .nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--white);
+    transition: all 0.25s;
+    border-radius: 1px;
+  }
+
+  .nav-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+  .nav-toggle.open span:nth-child(2) { opacity: 0; }
+  .nav-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+  @media (max-width: 768px) {
+    .nav-toggle { display: flex; }
+
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      right: 0;
+      background: var(--navy);
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+    }
+
+    .nav-links.open { display: flex; }
+
+    .nav-link {
+      width: 100%;
+      padding: 0.75rem 2rem;
+    }
+
+    .btn-portal {
+      margin: 0.5rem 2rem;
+      width: calc(100% - 4rem);
+      text-align: center;
+    }
+  }
+</style>

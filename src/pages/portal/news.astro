@@ -1,0 +1,9 @@
+---
+export const prerender = false;
+import DashboardLayout from '../../layouts/DashboardLayout.astro';
+import NewsPage from '../../components/NewsPage';
+---
+
+<DashboardLayout title="News" activeSection="portal-news">
+  <NewsPage client:load />
+</DashboardLayout>

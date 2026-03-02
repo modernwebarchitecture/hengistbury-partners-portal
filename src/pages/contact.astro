@@ -1,0 +1,138 @@
+---
+export const prerender = true;
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactForm from '../components/ContactForm';
+---
+
+<BaseLayout title="Contact" description="Contact Hengistbury Investment Partners — First Floor, 34 Brook Street, London W1K 5DN.">
+
+  <div class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Get in Touch</p>
+      <h1>Contact Us</h1>
+    </div>
+  </div>
+
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-details">
+          <h2>Hengistbury Investment Partners</h2>
+          <div class="divider"></div>
+
+          <div class="detail-block">
+            <h3>Address</h3>
+            <address>
+              First Floor<br />
+              34 Brook Street<br />
+              London W1K 5DN<br />
+              United Kingdom
+            </address>
+          </div>
+
+          <div class="detail-block">
+            <h3>Telephone</h3>
+            <p><a href="tel:+442075294646">+44 20 7529 4646</a></p>
+          </div>
+
+          <div class="detail-block">
+            <h3>Email</h3>
+            <p><a href="mailto:info@hengistburypartners.com">info@hengistburypartners.com</a></p>
+          </div>
+
+          <div class="detail-block">
+            <h3>Investor Access</h3>
+            <p>
+              Existing investors can access reports and correspondence via the
+              <a href="/portal/login">Investor Portal</a>.
+            </p>
+          </div>
+
+          <div class="disclaimer-box">
+            <p>
+              This website is directed at professional investors only. Unsolicited investment
+              proposals and marketing materials should not be sent to this address.
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap">
+          <h2>Send an Enquiry</h2>
+          <div class="divider"></div>
+          <ContactForm client:load />
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: var(--navy);
+    padding: 5rem 0 4rem;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .page-hero h1 { color: var(--white); }
+
+  .contact-section {
+    background: var(--white);
+    padding: var(--section-pad);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .contact-details h2 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+
+  .detail-block {
+    margin-bottom: 1.75rem;
+  }
+
+  .detail-block h3 {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+  }
+
+  .detail-block address { font-style: normal; line-height: 1.8; color: #444; }
+  .detail-block p { color: #444; line-height: 1.6; }
+  .detail-block a { color: var(--navy); }
+  .detail-block a:hover { color: var(--gold); }
+
+  .disclaimer-box {
+    background: var(--off-white);
+    border-left: 3px solid var(--gold);
+    padding: 1rem 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .disclaimer-box p {
+    font-size: 0.82rem;
+    color: var(--mid-gray);
+    line-height: 1.6;
+  }
+
+  .contact-form-wrap h2 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+
+  @media (max-width: 900px) {
+    .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  }
+</style>

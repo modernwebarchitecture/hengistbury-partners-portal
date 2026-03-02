@@ -1,0 +1,160 @@
+---
+export const prerender = true;
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Stewardship Code Statement" description="UK Stewardship Code 2020 compliance statement — Hengistbury Investment Partners LLP.">
+
+  <div class="page-hero">
+    <div class="container">
+      <a href="/disclosures" class="back-link">← Disclosures</a>
+      <p class="eyebrow">Regulatory Disclosure</p>
+      <h1>Stewardship Code Statement</h1>
+      <p class="meta">Hengistbury Investment Partners LLP &mdash; Statement of Approach 2024</p>
+    </div>
+  </div>
+
+  <article class="disclosure-body">
+    <div class="container">
+      <div class="doc-grid">
+        <nav class="doc-toc">
+          <p class="toc-label">Contents</p>
+          <ol>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#purpose">Purpose and Governance</a></li>
+            <li><a href="#integration">Stewardship Integration</a></li>
+            <li><a href="#engagement">Engagement Approach</a></li>
+            <li><a href="#escalation">Escalation and Voting</a></li>
+            <li><a href="#reporting">Reporting</a></li>
+          </ol>
+          <div class="toc-footer">
+            <a href="/disclosures" class="back-link-sm">All disclosures</a>
+          </div>
+        </nav>
+
+        <div class="doc-content">
+          <section id="introduction">
+            <h2>1. Introduction</h2>
+            <p>
+              This statement describes the approach of Hengistbury Investment Partners LLP
+              (&ldquo;the Firm&rdquo;) to stewardship and sets out how we have applied the principles of
+              the Financial Reporting Council&rsquo;s UK Stewardship Code 2020 (&ldquo;the Code&rdquo;).
+            </p>
+            <p>
+              The Code aims to enhance the quality of engagement between investors and companies
+              to help improve long-term risk-adjusted returns to shareholders and the efficient
+              exercise of governance responsibilities.
+            </p>
+          </section>
+
+          <section id="purpose">
+            <h2>2. Purpose and Governance</h2>
+            <p>
+              The Firm&rsquo;s approach to stewardship is underpinned by a belief that good governance
+              and responsible business practices are correlated with sustainable long-term
+              investment returns. Stewardship considerations are integrated into our investment
+              process as a matter of course.
+            </p>
+            <p>
+              The Firm&rsquo;s management is responsible for overseeing the implementation of this
+              stewardship policy. It is reviewed periodically to ensure it remains appropriate
+              and reflects evolving best practice and regulatory expectations.
+            </p>
+          </section>
+
+          <section id="integration">
+            <h2>3. Stewardship Integration</h2>
+            <p>
+              Environmental, Social and Governance (&ldquo;ESG&rdquo;) factors are considered as part of the
+              Firm&rsquo;s overall investment analysis and risk assessment process. We assess material
+              ESG risks and opportunities alongside traditional financial analysis when evaluating
+              potential and existing investments.
+            </p>
+            <p>
+              We acknowledge that certain investment strategies employed by the Firm are not
+              directly exposed to equity securities of specific companies, and stewardship
+              activities are applied proportionately to the nature of investments held.
+            </p>
+          </section>
+
+          <section id="engagement">
+            <h2>4. Engagement Approach</h2>
+            <p>
+              Where the Firm holds positions in equity securities, it is prepared to engage
+              with company management on matters of governance, strategy and sustainability
+              where this is consistent with our obligations to investors and our investment
+              objectives. Engagement may take the form of:
+            </p>
+            <ul>
+              <li>Direct dialogue with company management and boards;</li>
+              <li>Participation in investor meetings and capital markets days;</li>
+              <li>Correspondence regarding governance matters; and</li>
+              <li>Collaboration with other shareholders where appropriate.</li>
+            </ul>
+          </section>
+
+          <section id="escalation">
+            <h2>5. Escalation and Voting</h2>
+            <p>
+              Where engagement does not lead to satisfactory outcomes, the Firm may escalate
+              its approach, which could include voting against management resolutions,
+              communicating publicly our concerns, or reducing or exiting a position.
+            </p>
+            <p>
+              Where the Firm has voting rights associated with equity investments, it exercises
+              those rights in a considered manner with reference to the best interests of
+              investors and in accordance with this policy.
+            </p>
+          </section>
+
+          <section id="reporting">
+            <h2>6. Reporting</h2>
+            <p>
+              The Firm is committed to transparency in its stewardship activities. This statement
+              is made available on the Firm&rsquo;s website and is updated at least annually. The Firm
+              reports to investors on relevant stewardship activities through its periodic
+              investor communications.
+            </p>
+          </section>
+
+          <div class="doc-footer">
+            <p>Published: March 2024 &bull; Annual statement covering 2023 activities</p>
+            <p>
+              Hengistbury Investment Partners LLP &bull; Partnership No: OC365747 &bull;
+              Authorised and regulated by the Financial Conduct Authority
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+</BaseLayout>
+
+<style>
+  .page-hero { background: var(--navy); padding: 3rem 0 4rem; }
+  .back-link { display: inline-block; color: rgba(255,255,255,0.5); font-size: 0.85rem; margin-bottom: 1.5rem; transition: color 0.2s; }
+  .back-link:hover { color: var(--gold); }
+  .eyebrow { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 0.75rem; }
+  .page-hero h1 { color: var(--white); margin-bottom: 0.75rem; }
+  .meta { color: rgba(255,255,255,0.5); font-size: 0.875rem; }
+  .disclosure-body { padding: 4rem 0; background: var(--white); }
+  .doc-grid { display: grid; grid-template-columns: 220px 1fr; gap: 4rem; align-items: start; }
+  .doc-toc { position: sticky; top: 90px; }
+  .toc-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; color: var(--mid-gray); margin-bottom: 0.75rem; }
+  .doc-toc ol { list-style: none; border-left: 2px solid var(--border); padding-left: 0; margin-bottom: 2rem; }
+  .doc-toc a { display: block; padding: 0.45rem 0.75rem; font-size: 0.82rem; color: var(--mid-gray); border-left: 2px solid transparent; margin-left: -2px; line-height: 1.4; transition: color 0.15s, border-color 0.15s; }
+  .doc-toc a:hover { color: var(--navy); border-left-color: var(--gold); }
+  .toc-footer { border-top: 1px solid var(--border); padding-top: 1rem; }
+  .back-link-sm { font-size: 0.8rem; color: var(--mid-gray); }
+  .back-link-sm:hover { color: var(--gold); }
+  .doc-content section { margin-bottom: 3rem; }
+  .doc-content h2 { font-size: 1.4rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+  .doc-content h3 { font-size: 1.05rem; font-family: var(--font-body); font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+  .doc-content p { color: #444; line-height: 1.8; margin-bottom: 1rem; }
+  .doc-content ul { color: #444; padding-left: 1.5rem; margin-bottom: 1rem; line-height: 1.8; }
+  .doc-content li { margin-bottom: 0.35rem; }
+  .doc-footer { border-top: 1px solid var(--border); padding-top: 2rem; margin-top: 3rem; }
+  .doc-footer p { font-size: 0.8rem; color: var(--mid-gray); line-height: 1.65; }
+  @media (max-width: 768px) { .doc-grid { grid-template-columns: 1fr; } .doc-toc { position: static; } }
+</style>

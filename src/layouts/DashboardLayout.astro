@@ -1,0 +1,311 @@
+---
+import { getUserProfile } from '../lib/supabase-server';
+
+interface Props {
+  title: string;
+  activeSection?: string;
+}
+
+const { title, activeSection = '' } = Astro.props;
+
+const { user, profile } = await getUserProfile(Astro.cookies);
+const isAdmin = profile?.role === 'admin';
+const displayName = profile?.full_name || user?.email || 'Investor';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title} | Hengistbury Partners Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <style is:global>
+    :root {
+      --navy:       #0f1d2f;
+      --navy-light: #1a2f47;
+      --gold:       #c9a84c;
+      --gold-light: #e8c878;
+      --white:      #ffffff;
+      --off-white:  #f8f6f0;
+      --light-gray: #f0eeea;
+      --mid-gray:   #8a8a8a;
+      --text:       #1a1a2e;
+      --border:     #e0ddd6;
+
+      --font-heading: 'EB Garamond', Georgia, serif;
+      --font-body:    'DM Sans', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      background: var(--off-white);
+      line-height: 1.65;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-heading);
+      font-weight: 400;
+      color: var(--navy);
+    }
+
+    a { color: var(--navy); text-decoration: none; }
+
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1.5rem;
+      border-radius: 2px;
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+    }
+    .btn-primary { background: var(--gold); color: var(--navy); }
+    .btn-primary:hover { background: var(--gold-light); }
+    .btn-outline { background: transparent; border: 1.5px solid var(--gold); color: var(--gold); }
+    .btn-outline:hover { background: var(--gold); color: var(--navy); }
+    .btn-danger { background: #c0392b; color: #fff; }
+    .btn-danger:hover { background: #e74c3c; }
+
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+    .badge-published { background: #d4edda; color: #155724; }
+    .badge-draft { background: #fff3cd; color: #856404; }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="/" class="logo-link">
+          <span class="logo-h">H</span>
+          <span class="logo-text">engistbury</span>
+        </a>
+        <p class="sidebar-tagline">Partners Portal</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        {isAdmin && (
+          <>
+            <p class="nav-section-label">Admin</p>
+            <a href="/admin" class={`nav-link ${activeSection === 'admin-overview' ? 'active' : ''}`}>
+              Overview
+            </a>
+            <a href="/admin/letters" class={`nav-link ${activeSection === 'admin-letters' ? 'active' : ''}`}>
+              Letters
+            </a>
+            <a href="/admin/posts" class={`nav-link ${activeSection === 'admin-posts' ? 'active' : ''}`}>
+              News Posts
+            </a>
+            <a href="/admin/users" class={`nav-link ${activeSection === 'admin-users' ? 'active' : ''}`}>
+              Users
+            </a>
+            <div class="nav-divider"></div>
+          </>
+        )}
+
+        <p class="nav-section-label">Investor</p>
+        <a href="/portal" class={`nav-link ${activeSection === 'portal-dashboard' ? 'active' : ''}`}>
+          Dashboard
+        </a>
+        <a href="/portal/letters" class={`nav-link ${activeSection === 'portal-letters' ? 'active' : ''}`}>
+          Letters
+        </a>
+        <a href="/portal/news" class={`nav-link ${activeSection === 'portal-news' ? 'active' : ''}`}>
+          News
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-info">
+          <span class="user-name">{displayName}</span>
+          <span class="user-role">{isAdmin ? 'Administrator' : 'Investor'}</span>
+        </div>
+        <div class="sidebar-actions">
+          <a href="/" class="sidebar-back-link">← Public site</a>
+          <form method="post" action="/portal/sign-out">
+            <button type="submit" class="sign-out-btn">Sign out</button>
+          </form>
+        </div>
+      </div>
+    </aside>
+
+    <main class="content">
+      <slot />
+    </main>
+  </div>
+</body>
+</html>
+
+<style>
+  .layout {
+    display: flex;
+    min-height: 100vh;
+  }
+
+  .sidebar {
+    width: 240px;
+    min-height: 100vh;
+    background: var(--navy);
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+  .sidebar-header {
+    padding: 2rem 1.5rem 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .logo-link {
+    display: flex;
+    align-items: baseline;
+    gap: 0.15rem;
+    color: var(--white);
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+  }
+
+  .logo-h {
+    color: var(--gold);
+    font-size: 1.5rem;
+  }
+
+  .sidebar-tagline {
+    color: var(--mid-gray);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 0.25rem;
+  }
+
+  .sidebar-nav {
+    flex: 1;
+    padding: 1.5rem 0;
+  }
+
+  .nav-section-label {
+    color: var(--mid-gray);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.5rem 1.5rem 0.25rem;
+  }
+
+  .nav-link {
+    display: block;
+    color: rgba(255,255,255,0.75);
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+    transition: all 0.15s;
+    border-left: 3px solid transparent;
+  }
+
+  .nav-link:hover {
+    color: var(--white);
+    background: rgba(255,255,255,0.05);
+  }
+
+  .nav-link.active {
+    color: var(--gold);
+    border-left-color: var(--gold);
+    background: rgba(201,168,76,0.1);
+  }
+
+  .nav-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.1);
+    margin: 1rem 1.5rem;
+  }
+
+  .sidebar-footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .user-info {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.75rem;
+  }
+
+  .user-name {
+    color: var(--white);
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  .user-role {
+    color: var(--gold);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .sidebar-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .sidebar-back-link {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.8rem;
+    transition: color 0.15s;
+  }
+
+  .sidebar-back-link:hover {
+    color: rgba(255,255,255,0.8);
+  }
+
+  .sign-out-btn {
+    background: none;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.6);
+    padding: 0.4rem 0.75rem;
+    border-radius: 2px;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.15s;
+    width: 100%;
+    text-align: left;
+  }
+
+  .sign-out-btn:hover {
+    border-color: rgba(255,255,255,0.4);
+    color: var(--white);
+  }
+
+  .content {
+    flex: 1;
+    padding: 2.5rem;
+    overflow-y: auto;
+    max-width: calc(100vw - 240px);
+  }
+
+  @media (max-width: 768px) {
+    .layout { flex-direction: column; }
+    .sidebar { width: 100%; min-height: auto; height: auto; position: static; }
+    .content { max-width: 100%; padding: 1.5rem; }
+  }
+</style>

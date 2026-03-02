@@ -1,0 +1,181 @@
+---
+export const prerender = true;
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const disclosures = [
+  {
+    href: '/disclosures/pillar-3',
+    title: 'Pillar 3 Disclosure',
+    desc: 'Capital adequacy and risk management framework disclosure under CRD IV / UK CRR.',
+    updated: '31 December 2023',
+  },
+  {
+    href: '/disclosures/remuneration',
+    title: 'Remuneration Policy',
+    desc: 'Disclosure of our remuneration policy and practices in accordance with AIFMD / MIFID II requirements.',
+    updated: '31 December 2023',
+  },
+  {
+    href: '/disclosures/stewardship-code',
+    title: 'Stewardship Code Statement',
+    desc: 'Our statement of compliance with the Financial Reporting Council UK Stewardship Code 2020.',
+    updated: '31 March 2024',
+  },
+  {
+    href: '/disclosures/privacy-notice',
+    title: 'Privacy Notice',
+    desc: 'How Hengistbury Investment Partners collects, uses, stores and protects personal data under UK GDPR.',
+    updated: '1 January 2024',
+  },
+  {
+    href: '/disclosures/modern-slavery',
+    title: 'Modern Slavery Statement',
+    desc: 'Our annual statement pursuant to section 54 of the Modern Slavery Act 2015.',
+    updated: '30 June 2024',
+  },
+];
+---
+
+<BaseLayout title="Regulatory Disclosures" description="Regulatory disclosures published by Hengistbury Investment Partners LLP — Pillar 3, Remuneration, Stewardship Code, Privacy Notice, Modern Slavery Statement.">
+
+  <div class="page-hero">
+    <div class="container">
+      <p class="eyebrow">FCA Regulated Firm</p>
+      <h1>Regulatory Disclosures</h1>
+      <p class="hero-sub">
+        In accordance with our obligations as an FCA-authorised firm, Hengistbury Investment
+        Partners LLP publishes the following regulatory disclosures.
+      </p>
+    </div>
+  </div>
+
+  <section class="disclosures-hub">
+    <div class="container">
+      <div class="disclosure-list">
+        {disclosures.map(d => (
+          <a href={d.href} class="disclosure-item">
+            <div class="disclosure-item-content">
+              <h2>{d.title}</h2>
+              <p>{d.desc}</p>
+              <span class="updated">Last updated: {d.updated}</span>
+            </div>
+            <span class="disclosure-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        ))}
+      </div>
+
+      <div class="hub-footer">
+        <p>
+          These disclosures are published in accordance with our regulatory obligations.
+          If you have questions regarding any of these documents, please
+          <a href="/contact">contact us</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: var(--navy);
+    padding: 5rem 0 4rem;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .page-hero h1 { color: var(--white); margin-bottom: 1rem; }
+
+  .hero-sub {
+    color: rgba(255,255,255,0.7);
+    max-width: 580px;
+    line-height: 1.7;
+    font-size: 1.05rem;
+  }
+
+  .disclosures-hub { padding: var(--section-pad); background: var(--white); }
+
+  .disclosure-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 3rem;
+  }
+
+  .disclosure-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+    transition: background 0.2s;
+    gap: 1rem;
+  }
+
+  .disclosure-item:last-child { border-bottom: none; }
+
+  .disclosure-item:hover {
+    background: var(--off-white);
+  }
+
+  .disclosure-item-content {
+    flex: 1;
+  }
+
+  .disclosure-item h2 {
+    font-size: 1.15rem;
+    margin-bottom: 0.4rem;
+    color: var(--navy);
+    transition: color 0.2s;
+  }
+
+  .disclosure-item:hover h2 { color: var(--gold); }
+
+  .disclosure-item p {
+    color: var(--mid-gray);
+    font-size: 0.9rem;
+    line-height: 1.55;
+    margin-bottom: 0.5rem;
+  }
+
+  .updated {
+    font-size: 0.8rem;
+    color: var(--mid-gray);
+    font-style: italic;
+  }
+
+  .disclosure-arrow {
+    color: var(--gold);
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+
+  .disclosure-item:hover .disclosure-arrow { transform: translateX(4px); }
+
+  .hub-footer {
+    border-top: 1px solid var(--border);
+    padding-top: 2rem;
+    max-width: 640px;
+  }
+
+  .hub-footer p {
+    color: var(--mid-gray);
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  .hub-footer a { color: var(--gold); }
+  .hub-footer a:hover { text-decoration: underline; }
+</style>

@@ -1,0 +1,9 @@
+---
+export const prerender = false;
+import DashboardLayout from '../../layouts/DashboardLayout.astro';
+import LettersArchive from '../../components/LettersArchive';
+---
+
+<DashboardLayout title="Letters" activeSection="portal-letters">
+  <LettersArchive client:load />
+</DashboardLayout>
