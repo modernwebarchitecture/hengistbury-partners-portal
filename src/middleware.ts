@@ -13,7 +13,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
     return next();
   }
 
-  const supabase = createSupabaseServerClient(cookies);
+  const supabase = createSupabaseServerClient(context.request, cookies);
   const { data: { user } } = await supabase.auth.getUser();
 
   if (!user) {
@@ -21,13 +21,8 @@ export const onRequest = defineMiddleware(async (context, next) => {
   }
 
   if (isAdminRoute) {
-    const { data: profile } = await supabase
-      .from('profiles')
-      .select('role')
-      .eq('id', user.id)
-      .single();
-
-    if (!profile || profile.role !== 'admin') {
+    const { data: role } = await supabase.rpc('get_current_user_role');
+    if (role !== 'admin') {
       return redirect('/portal');
     }
   }

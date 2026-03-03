@@ -37,8 +37,7 @@ export default function AdminLetters() {
         return;
       }
 
-      const { data: urlData } = supabase.storage.from('documents').getPublicUrl(fileName);
-      fileUrl = urlData.publicUrl;
+      fileUrl = fileName; // store path only; signed URLs generated at access time
     }
 
     const { error } = await supabase.from('letters').insert({
@@ -70,6 +69,12 @@ export default function AdminLetters() {
 
     await supabase.from('letters').delete().eq('id', id);
     setLetters(prev => prev.filter(l => l.id !== id));
+  }
+
+  async function openSignedUrl(path: string) {
+    const storagePath = path.includes('/documents/') ? path.split('/documents/')[1] : path;
+    const { data } = await supabase.storage.from('documents').createSignedUrl(storagePath, 3600);
+    if (data?.signedUrl) window.open(data.signedUrl, '_blank');
   }
 
   async function toggleStatus(letter: Letter) {
@@ -153,7 +158,7 @@ export default function AdminLetters() {
                   </td>
                   <td className="actions-cell">
                     {letter.file_url && (
-                      <a href={letter.file_url} target="_blank" rel="noreferrer" className="action-link">View PDF</a>
+                      <button className="action-link" onClick={() => openSignedUrl(letter.file_url!)}>View PDF</button>
                     )}
                     <button className="action-link" onClick={() => toggleStatus(letter)}>
                       {letter.status === 'published' ? 'Unpublish' : 'Publish'}

@@ -20,6 +20,12 @@ export default function LettersArchive() {
   const formatDate = (dateStr: string) =>
     new Date(dateStr).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
 
+  async function openSignedUrl(path: string) {
+    const storagePath = path.includes('/documents/') ? path.split('/documents/')[1] : path;
+    const { data } = await supabase.storage.from('documents').createSignedUrl(storagePath, 3600);
+    if (data?.signedUrl) window.open(data.signedUrl, '_blank');
+  }
+
   if (loading) return <div className="loading">Loading letters…</div>;
 
   return (
@@ -44,14 +50,12 @@ export default function LettersArchive() {
               </div>
               <div className="letter-action">
                 {letter.file_url ? (
-                  <a
-                    href={letter.file_url}
-                    target="_blank"
-                    rel="noreferrer"
+                  <button
+                    onClick={() => openSignedUrl(letter.file_url!)}
                     className="btn btn-primary"
                   >
                     Download PDF
-                  </a>
+                  </button>
                 ) : (
                   <span className="no-file">PDF coming soon</span>
                 )}

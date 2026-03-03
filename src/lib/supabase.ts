@@ -1,10 +1,12 @@
-import { createClient } from '@supabase/supabase-js';
+import { createBrowserClient } from '@supabase/ssr';
 
 const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
 
 // Browser client — used in React islands (client:load)
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+// Uses createBrowserClient so the session is stored in cookies,
+// which the server-side middleware can then read.
+export const supabase = createBrowserClient(supabaseUrl, supabaseAnonKey);
 
 export type Profile = {
   id: string;

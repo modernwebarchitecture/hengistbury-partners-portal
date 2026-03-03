@@ -1,0 +1,16 @@
+---
+export const prerender = false;
+import { getUserProfile } from '../../lib/supabase-server';
+
+const { user, profile } = await getUserProfile(Astro.request, Astro.cookies);
+
+if (!user) {
+  return Astro.redirect('/portal/login');
+}
+
+if (profile?.role === 'admin') {
+  return Astro.redirect('/admin');
+}
+
+return Astro.redirect('/portal');
+---

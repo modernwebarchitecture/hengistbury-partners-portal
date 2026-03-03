@@ -20,18 +20,8 @@ export default function LoginForm() {
       return;
     }
 
-    // Fetch the user's role to determine redirect destination
-    const { data: profile } = await supabase
-      .from('profiles')
-      .select('role')
-      .eq('id', data.user.id)
-      .single();
-
-    if (profile?.role === 'admin') {
-      window.location.href = '/admin';
-    } else {
-      window.location.href = '/portal';
-    }
+    // Let the server decide where to send them based on role
+    window.location.href = '/portal/auth-redirect';
   };
 
   return (

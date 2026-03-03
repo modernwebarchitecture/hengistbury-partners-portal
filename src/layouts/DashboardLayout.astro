@@ -8,7 +8,7 @@ interface Props {
 
 const { title, activeSection = '' } = Astro.props;
 
-const { user, profile } = await getUserProfile(Astro.cookies);
+const { user, profile } = await getUserProfile(Astro.request, Astro.cookies);
 const isAdmin = profile?.role === 'admin';
 const displayName = profile?.full_name || user?.email || 'Investor';
 ---
