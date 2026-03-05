@@ -12,8 +12,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <p class="hero-eyebrow">Hengistbury Investment Partners</p>
         <h1>Alternative Investment<br/>Management</h1>
         <p class="hero-sub">
-          An independent investment firm providing institutional-quality alternative
-          strategies to professional investors. Established 2011.
+          Founded in 2011, Hengistbury Investment Partners LLP is an alternative investment
+          management partnership based in London.
         </p>
         <div class="hero-actions">
           <a href="/about" class="btn btn-primary">Learn About Us</a>
@@ -50,55 +50,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <!-- About teaser -->
-  <section class="about-teaser">
-    <div class="container">
-      <div class="about-teaser-inner">
-        <div class="about-teaser-text">
-          <p class="section-eyebrow">The Firm</p>
-          <h2>An Independent Approach to Alternative Investment</h2>
-          <div class="divider"></div>
-          <p>
-            Founded in 2011, Hengistbury Investment Partners LLP is an independently owned and
-            managed alternative investment firm. We manage capital on behalf of a select group
-            of institutional and sophisticated private investors, applying rigorous fundamental
-            analysis to identify and capture compelling risk-adjusted opportunities.
-          </p>
-          <p style="margin-top:1rem;">
-            Our focus on capacity discipline and alignment of interest with our investors
-            has underpinned our approach since inception.
-          </p>
-          <a href="/about" class="btn btn-navy" style="margin-top:1.75rem;">About the Firm</a>
-        </div>
-        <div class="about-teaser-card">
-          <div class="firm-card">
-            <h3>Firm Details</h3>
-            <div class="firm-detail-row">
-              <span class="detail-label">Founded</span>
-              <span>2011</span>
-            </div>
-            <div class="firm-detail-row">
-              <span class="detail-label">Domicile</span>
-              <span>England &amp; Wales</span>
-            </div>
-            <div class="firm-detail-row">
-              <span class="detail-label">Regulated by</span>
-              <span>Financial Conduct Authority</span>
-            </div>
-            <div class="firm-detail-row">
-              <span class="detail-label">Partnership No</span>
-              <span>OC365747</span>
-            </div>
-            <div class="firm-detail-row">
-              <span class="detail-label">Strategy</span>
-              <span>Alternative Investments</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Disclosures teaser -->
   <section class="disclosures-teaser">
     <div class="container">
@@ -106,29 +57,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h2>Regulatory Disclosures</h2>
       <div class="divider"></div>
       <p class="disclosures-intro">
-        In accordance with our obligations as an FCA-regulated firm, we publish the following
-        regulatory disclosures for review by clients and counterparties.
+        Hengistbury Investment Partners LLP is authorised and regulated by the Financial Conduct Authority in the United Kingdom.
       </p>
       <div class="disclosures-grid">
         <a href="/disclosures/pillar-3" class="disclosure-card">
           <h4>Pillar 3 Disclosure</h4>
-          <p>Capital adequacy and risk management framework disclosure under CRD IV.</p>
         </a>
         <a href="/disclosures/remuneration" class="disclosure-card">
           <h4>Remuneration Policy</h4>
-          <p>Our approach to remuneration in accordance with AIFMD requirements.</p>
         </a>
         <a href="/disclosures/stewardship-code" class="disclosure-card">
           <h4>Stewardship Code</h4>
-          <p>Our statement of compliance with the FRC UK Stewardship Code.</p>
         </a>
         <a href="/disclosures/privacy-notice" class="disclosure-card">
           <h4>Privacy Notice</h4>
-          <p>How we collect, use and protect personal data under UK GDPR.</p>
         </a>
         <a href="/disclosures/modern-slavery" class="disclosure-card">
           <h4>Modern Slavery Statement</h4>
-          <p>Our commitment under the Modern Slavery Act 2015.</p>
         </a>
       </div>
     </div>
@@ -138,11 +83,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="cta-section">
     <div class="container">
       <div class="cta-inner">
-        <h2>Interested in Learning More?</h2>
-        <p>
-          We welcome enquiries from institutional investors and qualified private clients.
-          Please contact us to arrange an introductory conversation.
-        </p>
+        <h2>For more details please contact</h2>
         <a href="/contact" class="btn btn-primary">Get in Touch</a>
       </div>
     </div>
@@ -255,62 +196,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     color: rgba(15,29,47,0.7);
   }
 
-  /* About teaser */
-  .about-teaser { background: var(--white); }
-
-  .section-eyebrow {
-    font-size: 0.75rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--gold);
-    font-weight: 600;
-    margin-bottom: 0.75rem;
-  }
-
-  .about-teaser-inner {
-    display: grid;
-    grid-template-columns: 1fr 380px;
-    gap: 4rem;
-    align-items: start;
-  }
-
-  .about-teaser-text p {
-    color: #444;
-    line-height: 1.75;
-  }
-
-  .firm-card {
-    background: var(--off-white);
-    border: 1px solid var(--border);
-    padding: 2rem;
-    border-top: 3px solid var(--gold);
-  }
-
-  .firm-card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid var(--border);
-    color: var(--navy);
-  }
-
-  .firm-detail-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.6rem 0;
-    border-bottom: 1px solid var(--border);
-    font-size: 0.875rem;
-    gap: 1rem;
-  }
-
-  .firm-detail-row:last-child { border-bottom: none; }
-
-  .detail-label {
-    color: var(--mid-gray);
-    font-weight: 500;
-    flex-shrink: 0;
-  }
-
   /* Disclosures teaser */
   .disclosures-teaser { background: var(--off-white); }
 
@@ -375,7 +260,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   @media (max-width: 900px) {
     .hero-ornament { display: none; }
-    .about-teaser-inner { grid-template-columns: 1fr; }
     .disclosures-grid { grid-template-columns: repeat(2, 1fr); }
   }
 
