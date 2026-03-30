@@ -11,10 +11,17 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('sending');
-    // In production, wire this to your preferred email service
-    // (e.g. Resend, SendGrid, or a Cloudflare Worker)
-    await new Promise(r => setTimeout(r, 800)); // simulate async
-    setStatus('sent');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error();
+      setStatus('sent');
+    } catch {
+      setStatus('error');
+    }
   };
 
   if (status === 'sent') {
@@ -77,6 +84,9 @@ export default function ContactForm() {
           placeholder="How can we help?"
         />
       </div>
+      {status === 'error' && (
+        <p className="form-error">Something went wrong — please try again or email us directly at info@hengistburypartners.com.</p>
+      )}
       <button type="submit" className="btn btn-primary" disabled={status === 'sending'}>
         {status === 'sending' ? 'Sending…' : 'Send Enquiry'}
       </button>
@@ -101,6 +111,7 @@ export default function ContactForm() {
           border-color: #c9a84c;
         }
         textarea { resize: vertical; }
+        .form-error { font-size: 0.875rem; color: #a33; margin: 0; }
         .btn {
           align-self: flex-start;
           padding: 0.75rem 2rem;
