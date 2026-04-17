@@ -19,7 +19,7 @@ export const POST: APIRoute = async ({ request }) => {
 
   const { error } = await resend.emails.send({
     from: 'Hengistbury Partners Portal <onboarding@resend.dev>',
-    to: 'jimmy@modernwebarchitecture.com',
+    to: import.meta.env.CONTACT_EMAIL,
     replyTo: email,
     subject: `New enquiry from ${name}`,
     html: `
