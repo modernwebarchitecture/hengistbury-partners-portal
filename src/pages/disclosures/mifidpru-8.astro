@@ -1,0 +1,139 @@
+---
+export const prerender = true;
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="MIFIDPRU 8 Disclosure" description="MIFIDPRU 8 Disclosure — Hengistbury Investment Partners LLP.">
+
+  <div class="page-hero">
+    <div class="container">
+      <a href="/disclosures" class="back-link">← Disclosures</a>
+      <p class="eyebrow">Regulatory Disclosure</p>
+      <h1>MIFIDPRU 8 Disclosure</h1>
+      <p class="meta">Hengistbury Investment Partners LLP &mdash; April 2026</p>
+    </div>
+  </div>
+
+  <article class="disclosure-body">
+    <div class="container">
+      <div class="doc-grid">
+        <nav class="doc-toc">
+          <ol>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#own-funds">Own Funds</a></li>
+            <li><a href="#own-funds-requirements">Own Funds Requirements</a></li>
+            <li><a href="#remuneration">Remuneration Policy</a></li>
+          </ol>
+          <div class="toc-footer">
+            <a href="/disclosures" class="back-link-sm">All disclosures</a>
+          </div>
+        </nav>
+
+        <div class="doc-content">
+          <section id="introduction">
+            <h2>1. Introduction</h2>
+            <p>
+              This disclosure is made by Hengistbury Investment Partners LLP (&ldquo;the Firm&rdquo;)
+              in accordance with the Financial Conduct Authority&rsquo;s MIFIDPRU 8 rules, which
+              require certain FCA-authorised investment firms to publish information on own
+              funds, own funds requirements, and remuneration policies.
+            </p>
+            <p>
+              The Firm is authorised and regulated by the Financial Conduct Authority
+              (FCA reference number available on the FCA Register). This disclosure is
+              published annually and covers the period ending 31 December 2025.
+            </p>
+          </section>
+
+          <section id="own-funds">
+            <h2>2. Own Funds</h2>
+            <p>
+              The Firm&rsquo;s own funds are composed entirely of Common Equity Tier 1 (&ldquo;CET1&rdquo;)
+              capital, principally comprising members&rsquo; capital and retained earnings. The Firm
+              holds no Additional Tier 1 or Tier 2 instruments.
+            </p>
+            <p>
+              The Firm maintains own funds in excess of the higher of its permanent minimum
+              capital requirement, its fixed overheads requirement, and its K-factor requirement,
+              as applicable under MIFIDPRU.
+            </p>
+          </section>
+
+          <section id="own-funds-requirements">
+            <h2>3. Own Funds Requirements</h2>
+            <p>
+              As a non-interconnected, non-systemically important investment firm (&ldquo;SNI firm&rdquo;)
+              for MIFIDPRU purposes, the Firm&rsquo;s own funds requirement is determined as the
+              higher of:
+            </p>
+            <ul>
+              <li>The permanent minimum capital requirement of &pound;75,000;</li>
+              <li>One quarter of the Firm&rsquo;s fixed annual overheads (the &ldquo;fixed overheads requirement&rdquo;); and</li>
+              <li>Any applicable K-factor requirement.</li>
+            </ul>
+            <p>
+              The Firm monitors its own funds position on an ongoing basis and maintains
+              adequate capital resources to meet its regulatory requirements at all times.
+            </p>
+          </section>
+
+          <section id="remuneration">
+            <h2>4. Remuneration Policy</h2>
+            <p>
+              The Firm operates a remuneration policy that is consistent with and promotes
+              sound and effective risk management. The policy is designed to avoid creating
+              incentives that may lead to the taking of excessive risk.
+            </p>
+            <p>
+              Remuneration at the Firm consists of fixed and variable components.
+              Fixed remuneration reflects the relevant professional experience and
+              organisational responsibility of each individual. Variable remuneration
+              is discretionary and reflects performance over the relevant period,
+              assessed against both financial and non-financial criteria.
+            </p>
+            <p>
+              The Firm&rsquo;s remuneration arrangements are reviewed at least annually by the
+              Firm&rsquo;s management to ensure they remain appropriate and consistent with the
+              Firm&rsquo;s regulatory obligations and risk appetite.
+            </p>
+          </section>
+
+          <div class="doc-footer">
+            <p>Review date: April 2026</p>
+            <p>
+              Hengistbury Investment Partners LLP &bull; Partnership No: OC365747 &bull;
+              Authorised and regulated by the Financial Conduct Authority
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+</BaseLayout>
+
+<style>
+  .page-hero { background: var(--navy); padding: 3rem 0 4rem; }
+  .back-link { display: inline-block; color: rgba(255,255,255,0.5); font-size: 0.85rem; margin-bottom: 1.5rem; transition: color 0.2s; }
+  .back-link:hover { color: var(--gold); }
+  .eyebrow { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 0.75rem; }
+  .page-hero h1 { color: var(--white); margin-bottom: 0.75rem; }
+  .meta { color: rgba(255,255,255,0.5); font-size: 0.875rem; }
+  .disclosure-body { padding: 4rem 0; background: var(--white); }
+  .doc-grid { display: grid; grid-template-columns: 220px 1fr; gap: 4rem; align-items: start; }
+  .doc-toc { position: sticky; top: 90px; }
+  .doc-toc ol { list-style: none; border-left: 2px solid var(--border); padding-left: 0; margin-bottom: 2rem; }
+  .doc-toc a { display: block; padding: 0.45rem 0.75rem; font-size: 0.82rem; color: var(--mid-gray); border-left: 2px solid transparent; margin-left: -2px; line-height: 1.4; transition: color 0.15s, border-color 0.15s; }
+  .doc-toc a:hover { color: var(--navy); border-left-color: var(--gold); }
+  .toc-footer { border-top: 1px solid var(--border); padding-top: 1rem; }
+  .back-link-sm { font-size: 0.8rem; color: var(--mid-gray); }
+  .back-link-sm:hover { color: var(--gold); }
+  .doc-content section { margin-bottom: 2rem; }
+  .doc-content h2 { font-size: 1.4rem; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+  .doc-content p { color: #444; line-height: 1.7; margin-bottom: 0.6rem; }
+  .doc-content ul { color: #444; padding-left: 1.5rem; margin-bottom: 0.75rem; line-height: 1.7; }
+  .doc-content li { margin-bottom: 0.25rem; }
+  .doc-footer { border-top: 1px solid var(--border); padding-top: 2rem; margin-top: 3rem; }
+  .doc-footer p { font-size: 0.8rem; color: var(--mid-gray); line-height: 1.65; }
+  @media (max-width: 768px) { .doc-grid { grid-template-columns: 1fr; } .doc-toc { position: static; } }
+</style>
