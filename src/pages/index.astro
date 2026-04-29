@@ -60,14 +60,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         Hengistbury Investment Partners LLP is authorised and regulated by the Financial Conduct Authority in the United Kingdom.
       </p>
       <div class="disclosures-grid">
-        <a href="/disclosures/pillar-3" class="disclosure-card">
-          <h4>Pillar 3 Disclosure</h4>
-        </a>
-        <a href="/disclosures/remuneration" class="disclosure-card">
-          <h4>Remuneration Policy</h4>
+        <a href="/disclosures/mifidpru-8" class="disclosure-card">
+          <h4>MIFIDPRU 8 Disclosure</h4>
         </a>
         <a href="/disclosures/stewardship-code" class="disclosure-card">
-          <h4>Stewardship Code</h4>
+          <h4>UK Stewardship Code and Shareholder Rights Directive II</h4>
         </a>
         <a href="/disclosures/privacy-notice" class="disclosure-card">
           <h4>Privacy Notice</h4>
@@ -208,7 +205,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .disclosures-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.25rem;
   }
 
@@ -260,7 +257,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   @media (max-width: 900px) {
     .hero-ornament { display: none; }
-    .disclosures-grid { grid-template-columns: repeat(2, 1fr); }
   }
 
   @media (max-width: 768px) {
