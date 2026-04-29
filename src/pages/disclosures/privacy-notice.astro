@@ -16,33 +16,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
   <article class="disclosure-body">
     <div class="container">
-      <div class="doc-grid">
-        <nav class="doc-toc">
-          <ol>
-            <li><a href="#introduction">Introduction</a></li>
-            <li><a href="#purpose">Purpose</a></li>
-            <li><a href="#scope">Scope</a></li>
-            <li><a href="#personal-data">Personal Data</a></li>
-            <li><a href="#processing">Processing Personal Data</a></li>
-            <li><a href="#principles">Data Protection Principles</a></li>
-            <li><a href="#consent">Consent</a></li>
-            <li><a href="#grounds">Grounds for Processing</a></li>
-            <li><a href="#high-risk">High Risk Processing</a></li>
-            <li><a href="#fair-processing">Fair Processing Information</a></li>
-            <li><a href="#third-party">Third Party Service Providers</a></li>
-            <li><a href="#disclosure">Disclosure of Data</a></li>
-            <li><a href="#international">International Transfers</a></li>
-            <li><a href="#retention">Retention and Disposal</a></li>
-            <li><a href="#security">Data Security</a></li>
-            <li><a href="#rights">Data Subject Rights</a></li>
-            <li><a href="#record-keeping">Record Keeping</a></li>
-            <li><a href="#roles">Roles and Responsibilities</a></li>
-          </ol>
-          <div class="toc-footer">
-            <a href="/disclosures" class="back-link-sm">All disclosures</a>
-          </div>
-        </nav>
-
         <div class="doc-content">
 
           <section id="introduction">
@@ -189,7 +162,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             </p>
           </div>
         </div>
-      </div>
     </div>
   </article>
 
@@ -202,15 +174,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   .eyebrow { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 0.75rem; }
   .page-hero h1 { color: var(--white); margin-bottom: 0.75rem; }
   .meta { color: rgba(255,255,255,0.5); font-size: 0.875rem; }
-  .disclosure-body { padding: 4rem 0; background: var(--white); }
-  .doc-grid { display: grid; grid-template-columns: 220px 1fr; gap: 4rem; align-items: start; }
-  .doc-toc { position: sticky; top: 90px; max-height: calc(100vh - 120px); overflow-y: auto; }
-  .doc-toc ol { list-style: none; border-left: 2px solid var(--border); padding-left: 0; margin-bottom: 2rem; }
-  .doc-toc a { display: block; padding: 0.35rem 0.75rem; font-size: 0.8rem; color: var(--mid-gray); border-left: 2px solid transparent; margin-left: -2px; line-height: 1.4; transition: color 0.15s, border-color 0.15s; }
-  .doc-toc a:hover { color: var(--navy); border-left-color: var(--gold); }
-  .toc-footer { border-top: 1px solid var(--border); padding-top: 1rem; }
-  .back-link-sm { font-size: 0.8rem; color: var(--mid-gray); }
-  .back-link-sm:hover { color: var(--gold); }
+  .disclosure-body { padding: 2.5rem 0 4rem; background: var(--white); }
+  .doc-content { max-width: 780px; }
   .doc-content section { margin-bottom: 1.5rem; }
   .doc-content h2 { font-size: 1.4rem; margin-bottom: 0.6rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--border); }
   .doc-content p { color: #444; line-height: 1.65; margin-bottom: 0.45rem; }
@@ -221,5 +186,4 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   address { font-style: normal; line-height: 1.8; color: #444; }
   .doc-footer { border-top: 1px solid var(--border); padding-top: 2rem; margin-top: 3rem; }
   .doc-footer p { font-size: 0.8rem; color: var(--mid-gray); line-height: 1.65; }
-  @media (max-width: 768px) { .doc-grid { grid-template-columns: 1fr; } .doc-toc { position: static; max-height: none; } }
 </style>

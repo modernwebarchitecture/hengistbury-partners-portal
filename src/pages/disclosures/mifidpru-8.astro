@@ -16,18 +16,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
   <article class="disclosure-body">
     <div class="container">
-      <div class="doc-grid">
-        <nav class="doc-toc">
-          <ol>
-            <li><a href="#introduction">Introduction</a></li>
-            <li><a href="#qualitative">Qualitative Information</a></li>
-            <li><a href="#quantitative">Quantitative Information</a></li>
-          </ol>
-          <div class="toc-footer">
-            <a href="/disclosures" class="back-link-sm">All disclosures</a>
-          </div>
-        </nav>
-
         <div class="doc-content">
           <section id="introduction">
             <h2>Introduction</h2>
@@ -75,7 +63,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             </p>
           </div>
         </div>
-      </div>
     </div>
   </article>
 
@@ -88,15 +75,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   .eyebrow { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 0.75rem; }
   .page-hero h1 { color: var(--white); margin-bottom: 0.75rem; }
   .meta { color: rgba(255,255,255,0.5); font-size: 0.875rem; }
-  .disclosure-body { padding: 4rem 0; background: var(--white); }
-  .doc-grid { display: grid; grid-template-columns: 220px 1fr; gap: 4rem; align-items: start; }
-  .doc-toc { position: sticky; top: 90px; }
-  .doc-toc ol { list-style: none; border-left: 2px solid var(--border); padding-left: 0; margin-bottom: 2rem; }
-  .doc-toc a { display: block; padding: 0.45rem 0.75rem; font-size: 0.82rem; color: var(--mid-gray); border-left: 2px solid transparent; margin-left: -2px; line-height: 1.4; transition: color 0.15s, border-color 0.15s; }
-  .doc-toc a:hover { color: var(--navy); border-left-color: var(--gold); }
-  .toc-footer { border-top: 1px solid var(--border); padding-top: 1rem; }
-  .back-link-sm { font-size: 0.8rem; color: var(--mid-gray); }
-  .back-link-sm:hover { color: var(--gold); }
+  .disclosure-body { padding: 2.5rem 0 4rem; background: var(--white); }
+  .doc-content { max-width: 780px; }
   .doc-content section { margin-bottom: 1.5rem; }
   .doc-content h2 { font-size: 1.4rem; margin-bottom: 0.6rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--border); }
   .doc-content p { color: #444; line-height: 1.65; margin-bottom: 0.45rem; }
@@ -104,5 +84,4 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   .doc-content li { margin-bottom: 0.2rem; }
   .doc-footer { border-top: 1px solid var(--border); padding-top: 2rem; margin-top: 3rem; }
   .doc-footer p { font-size: 0.8rem; color: var(--mid-gray); line-height: 1.65; }
-  @media (max-width: 768px) { .doc-grid { grid-template-columns: 1fr; } .doc-toc { position: static; } }
 </style>
